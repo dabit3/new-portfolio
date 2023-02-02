@@ -1,0 +1,429 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<style>
+			/*  ================================================
+	Author: Codeberry
+	Name: Comet
+	URL: https://codeberry.net/downloads/comet
+	Version: 1.0
+	================================================ */
+
+/* Import fonts */
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:400,500");
+
+/* 1. Content elements */
+html {
+	-webkit-text-size-adjust: 100%;
+		-ms-text-size-adjust: 100%;
+}
+
+body {
+	font: 15px/1.5 "Roboto Mono", Helvetica, sans-serif;
+	color: #ebebea;
+	background: #222222;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+dd, dl, h1, p {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2 {
+	font-size: inherit;
+	font-weight: 400;
+	margin: 0;
+	line-height: .8;
+}
+
+a {
+	color: inherit;
+	position: relative;
+	border-bottom: 1px solid #f8f8f6;
+	text-decoration: none;
+}
+
+a:hover, a:focus {
+	color: #fccd03;
+	border-bottom: 1px solid #fccd03;
+}
+
+::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+:focus {
+	outline: 0;
+}
+
+.main-text {
+	font: 500 20px/1 "Roboto Mono", Helvetica, sans-serif;
+}
+
+.main-text-small {
+	font-size: 15px;
+}
+
+.logo {
+	background: url('https://arweave.net/VLrf5ebKgjOEEJOSi86qE8Sef2pfWbCUq_0Fsuu_gkI') no-repeat;
+	background-position: top left, top left;
+	background-repeat: no-repeat;
+	background-size: auto, auto 100%;
+	width: 42px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+}
+
+@media (max-width: 600px) {
+	.logo {
+		width: 42px;
+		height: 50px;
+	}
+}
+
+.section {
+	z-index: 1;
+	position: relative;
+	padding: 96px 0 96px 96px;
+	width: calc(100vw - 96px - 7em);
+	display: -webkit-box;
+	display: flex;
+	box-sizing: border-box;
+	min-height: 100vh;
+}
+
+@media (max-width: 1024px) {
+	.section {
+		padding: 48px 0 48px 48px;
+		width: calc(100vw - 48px - 7em);
+	}
+}
+
+@media (max-width: 950px) {
+	.section {
+		padding: 7.5vw;
+		width: 100%;
+	}
+}
+
+@media (max-width: 600px) {
+	.section {
+		display: block;
+		min-height: 0;
+	}
+}
+
+.column-section {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+}
+
+@media (max-width: 600px) {
+	.column-section-main {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		flex-direction: column;
+	}
+}
+
+.section-bio {
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+}
+
+.col-section {
+	width: 100%;
+	max-width: 382px;
+}
+
+@media (max-width: 600px) {
+	.col-section {
+		margin-bottom: 15vw;
+	}
+}
+
+.bio {
+	font-size: 20px;
+	font-weight: 100;
+	margin-bottom: -.45em;
+	max-width: 700px;
+}
+
+@media (max-width: 600px) {
+	.bio {
+		padding-top: 15vw;
+		font-size: 18px;
+	}
+}
+
+.list {
+	margin-top: 3.2em;
+}
+
+.list-item {
+	margin-top: .25em;
+	margin-bottom: 2em;
+}
+
+.list-item:last-child {
+	margin-bottom: -.4em;
+}
+
+.scrunch {
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	pointer-events: none;
+}
+
+.scrunch:after {
+	background: #222222;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.footer {
+	position: fixed;
+	right: 96px;
+	bottom: 92px;
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+	-webkit-box-align: end;
+	align-items: flex-end;
+}
+
+.avatar {
+	width: 320px;
+	border-radius: 90px;
+}
+
+@media (max-width: 1024px) {
+	.footer {
+		right: 48px;
+		bottom: 48px;
+	}
+}
+
+@media (max-width: 950px) {
+	.footer {
+		position: relative;
+		right: auto;
+		bottom: auto;
+		padding: 0 7.5vw 7.5vw;
+		-webkit-box-align: start;
+		align-items: flex-start;
+	}
+}
+
+.footer-links {
+	margin-top: 1em;
+	line-height: 1;
+}
+
+@media (max-width: 950px) {
+	.footer-links {
+		display: inline;
+	}
+}
+
+@media (max-width: 600px) {
+	.avatar {
+		margin-top: 60px;
+	}
+}
+
+@media (hover: hover) {
+	.footer-links:nth-child(odd):hover~.scrunch {
+		background-color: #d9534f;
+	}
+
+	.footer-links:nth-child(2n):hover~.scrunch {
+		background-color: #428bca;
+	}
+
+	.link-email:hover~.scrunch:after {
+		-webkit-animation: one 1s .25s linear forwards;
+				animation: one 1s .25s linear forwards;
+	}
+
+	.link-behance:hover~.scrunch:after {
+		-webkit-animation: two 1s .25s linear forwards;
+				animation: two 1s .25s linear forwards;
+	}
+
+	.link-dribbble:hover~.scrunch:after {
+		-webkit-animation: three 1s .25s linear forwards;
+				animation: three 1s .25s linear forwards;
+	}
+
+	.link-linkedin:hover~.scrunch:after {
+		-webkit-animation: four 1s .25s linear forwards;
+				animation: four 1s .25s linear forwards;
+	}
+
+	.link-twitter:hover~.scrunch:after {
+		-webkit-animation: five 1s .25s linear forwards;
+				animation: five 1s .25s linear forwards;
+	}
+
+	.link-instagram:hover~.scrunch:after {
+		-webkit-animation: six 1s .25s linear forwards;
+				animation: six 1s .25s linear forwards;
+	}
+
+	.link-site:hover~.scrunch:after {
+		-webkit-animation: seven 1s .25s linear forwards;
+				animation: seven 1s .25s linear forwards;
+	}
+}
+		</style>
+		<title>Nader Dabit</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1">
+		<link rel="shortcut icon" href="https://arweave.net/bzmnh8qlusuMJio7JpDcnZCj_G452lyQ7lmOIpxUMpk">
+	</head>
+	<body>
+		<section class="section column-section section-bio">
+		<figure class="logo"></figure>
+		  <img
+			class="avatar"
+			src="https://arweave.net/GHzq1h76LVyt3sFkZFZJ2p95fakW--mW3_bXPVMe2iU" />
+			<p class="bio">Hi, I'm Nader Dabit. A lifelong learner and teacher, I specialize in developer marketing and education and have been building web and mobile applications for over 10 years focusing on everything from blockchain, cloud, web, and cross-platform application development. I've spent almost 2 years working in the blockchain world, and previously spent over 3 years at AWS where I led developer marketing for the Front End Web & Mobile team. I'm currently focused on web3 social and DeFi as the Director of Developer Relations at Aave companies.
+			</p>
+		</section>
+		<section class="section column-section-main">
+			<div class="col-section">
+				<h2 class="main-text">Current tech interests</h2>
+				<dl class="list">
+					<dt class="main-text main-text-small">Fuel</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://fuel.network/" target="_blank">fuel.network</a>
+					</dd>
+					<dt class="main-text main-text-small">Arweave</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://www.arweave.org/" target="_blank">arweave.org</a>
+					</dd>
+					<dt class="main-text main-text-small">Next.js</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://nextjs.org/" target="_blank">nextjs.org</a>
+					</dd>
+					<dt class="main-text main-text-small">OpenAI</dt>
+
+					<dd class="list-item">
+						<a class="list-link" href="https://openai.com/" target="_blank">openai.com</a>
+					</dd>
+					<dt class="main-text main-text-small">Lens</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://lens.xyz/" target="_blank">lens.xyz</a>
+					</dd>
+					<dt class="main-text main-text-small">Fleek</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://fleek.xyz/" target="_blank">fleek.xyz</a>
+					</dd>
+					<dt class="main-text main-text-small">Gitcoin Passport</dt>
+						<dd class="list-item">
+						<a class="list-link" href="https://passport.gitcoin.co/#/dashboard" target="_blank">passport.gitcoin.co</a>
+					</dd>
+					<dt class="main-text main-text-small">React Native</dt>
+						<dd class="list-item">
+						<a class="list-link" href="https://reactnative.dev/" target="_blank">reactnative.dev</a>
+					</dd>
+					<dt class="main-text main-text-small">CDK</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://aws.amazon.com/cdk/" target="_blank">aws.amazon.com/cdk</a>
+					</dd>
+					<dt class="main-text main-text-small">XMTP</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://xmtp.org/" target="_blank">xmtp.org</a>
+					</dd>
+					<dt class="main-text main-text-small">Biconomy</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://www.biconomy.io/" target="_blank">biconomy.io</a>
+					</dd>
+					<dt class="main-text main-text-small">Bundlr</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://bundlr.network/" target="_blank">bundlr.network</a>
+					</dd>
+				</dl>
+			</div>
+			<div class="col-section">
+			  <h2 class="main-text">Clients and employers</h2>
+				<dl class="list">
+					<dt class="main-text main-text-small">AWS</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://aws.amazon.com/" target="_blank">aws.amazon.com</a>
+					</dd>
+					<dt class="main-text main-text-small">Amazon.com</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://www.amazon.com/" target="_blank">amazon.com</a>
+					</dd>
+					<dt class="main-text main-text-small">Celestia</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://celestia.org/" target="_blank">celestia.org</a>
+					</dd>
+					<dt class="main-text main-text-small">Aave Companies</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://aave.com/" target="_blank">aave.com</a>
+					</dd>
+					<dt class="main-text main-text-small">ClassPass</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://classpass.com/" target="_blank">classpass.com</a>
+					</dd>
+					<dt class="main-text main-text-small">Visa</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://usa.visa.com/" target="_blank">visa.com</a>
+					</dd>
+					<dt class="main-text main-text-small">Arweave</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://www.arweave.org/" target="_blank">arweave.org</a>
+					</dd>
+					<dt class="main-text main-text-small">US Army Corps of Engineers</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://www.usace.army.mil/" target="_blank">usace.army.mil</a>
+					</dd>
+					<dt class="main-text main-text-small">Warner Brothers</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://www.warnerbros.com/" target="_blank">warnerbros.com</a>
+					</dd>
+					<dt class="main-text main-text-small">Edge & Node</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://edgeandnode.com/" target="_blank">edgeandnode.com</a>
+					</dd>
+					<dt class="main-text main-text-small">SSENSE</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://www.ssense.com/" target="_blank">ssense.com</a>
+					</dd>
+					<dt class="main-text main-text-small">School Status</dt>
+					<dd class="list-item">
+						<a class="list-link" href="https://www.schoolstatus.com/" target="_blank">schoolstatus.com</a>
+					</dd>
+				</dl>
+			</div>
+		</section>
+		<footer class="footer main-text main-text-small">
+			<a class="footer-links link-twitter" href="https://twitter.com/dabit3" target="_blank">twitter</a>
+			<a class="footer-links link-facebook" target="_blank" href="https://lenster.xyz/u/nader.lens">lens</a>
+			<a class="footer-links link-instagram" target="_blank" href="https://youtube.com/c/naderdabit">youtube</a>
+			<a class="footer-links link-dribbble" target="_blank" href="https://nader.substack.com/">substack</a>
+			<a class="footer-links link-behance" target="_blank" href="https://github.com/dabit3">github</a>
+			<div class="scrunch" aria-hidden="true"></div>
+		</footer>
+	</body>
+</html>
